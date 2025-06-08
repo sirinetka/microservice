@@ -1,0 +1,34 @@
+package com.exmple.Auth;
+
+import com.example.dto.ClientRequest;
+import com.example.dto.ClientResponses;
+import javax.ws.rs.PUT;
+
+import java.util.List;
+
+public interface ClientInterfaceService {
+
+
+    //GET ID
+
+    public ClientResponses getById(Long id);
+
+    //GET
+
+    public List<ClientResponses> getAll();
+
+    //PUT
+
+    public void add(ClientRequest req);
+
+    //Post
+
+    public void modifier(Long id,ClientRequest res);
+
+    // Delete
+
+    public void supprimer(Long id);
+
+
+
+}

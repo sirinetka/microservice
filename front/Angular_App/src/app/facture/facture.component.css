@@ -1,0 +1,217 @@
+/* Style général */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Carte principale */
+.card {
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card-title {
+  padding: 15px 0;
+  background-color: #00008f !important;
+  margin: 0;
+}
+
+/* Tableau */
+.table {
+  margin-bottom: 0;
+}
+
+.table thead th {
+  background-color: #343a40;
+  color: white;
+  font-weight: 500;
+  border-bottom: none;
+}
+
+.table-bordered th, 
+.table-bordered td {
+  border: 1px solid #dee2e6;
+}
+
+.table-responsive {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.table tbody tr:hover {
+  background-color: rgba(0, 0, 143, 0.05);
+}
+
+/* Boutons */
+.btn {
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  padding: 8px 16px;
+}
+
+.btn-success {
+  background-color: #28a745;
+  border-color: #28a745;
+}
+
+.btn-success:hover {
+  background-color: #218838;
+  border-color: #1e7e34;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+
+.btn-danger:hover {
+  background-color: #c82333;
+  border-color: #bd2130;
+}
+
+.btn-warning {
+  background-color: #ffc107;
+  border-color: #ffc107;
+  color: #212529;
+}
+
+.btn-warning:hover {
+  background-color: #e0a800;
+  border-color: #d39e00;
+}
+
+.btn-outline-success {
+  border-color: #28a745;
+  color: #28a745;
+}
+
+.btn-outline-success:hover {
+  background-color: #28a745;
+  color: white;
+}
+
+/* Modales */
+.modal-content {
+  border: none;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.modal-header {
+  background-color: #3f51b5;
+  color: white;
+  border-bottom: none;
+}
+
+.modal-title {
+  font-weight: 600;
+}
+
+.modal-body {
+  padding: 25px;
+}
+
+/* Formulaire */
+.form-control {
+  border-radius: 6px;
+  padding: 10px 15px;
+  border: 1px solid #ced4da;
+  transition: border-color 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: #00008f;
+  box-shadow: 0 0 0 0.2rem rgba(0, 0, 143, 0.25);
+}
+
+.form-label {
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: #495057;
+}
+
+/* Icônes */
+.bi {
+  font-size: 1.1rem;
+  vertical-align: middle;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .table-responsive {
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+  }
+  
+  .btn-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .btn {
+    width: 100%;
+  }
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.card-body {
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* Effets de survol */
+.btn {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.btn:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.5);
+  opacity: 0;
+  border-radius: 100%;
+  transform: scale(1, 1) translate(-50%);
+  transform-origin: 50% 50%;
+}
+
+.btn:focus:after,
+.btn:hover:after {
+  animation: ripple 0.6s ease-out;
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0, 0);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(20, 20);
+    opacity: 0;
+  }
+}

@@ -1,0 +1,135 @@
+/* Conteneur principal */
+.container {
+  max-width: 700px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Carte globale */
+.card {
+  border: none;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Titre de la carte */
+.card-title {
+  background-color: #00008f !important;
+  padding: 1rem;
+  margin: 0;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 143, 0.3);
+}
+
+.card-title h3 {
+  margin: 0;
+  letter-spacing: 0.5px;
+  font-weight: 700 !important;
+}
+
+/* Corps du formulaire */
+.card-body {
+  padding: 2rem;
+}
+
+/* Labels */
+.form-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #2c3e50;
+  font-size: 0.95rem;
+}
+
+/* Champs de formulaire */
+input[type="number"],
+input[type="date"],
+input[type="text"],
+.form-select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  transition: all 0.3s;
+  margin-bottom: 1.5rem;
+  background-color: #f9f9f9;
+}
+
+input[type="number"]:focus,
+input[type="date"]:focus,
+input[type="text"]:focus,
+.form-select:focus {
+  outline: none;
+  border-color: #00008f;
+  box-shadow: 0 0 0 3px rgba(0, 0, 143, 0.1);
+  background-color: white;
+}
+
+/* Sélecteur */
+.form-select {
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1em;
+}
+
+/* Bouton */
+.btn-success {
+  background-color: #28a745;
+  border: none;
+  padding: 0.75rem 2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  transition: all 0.3s;
+  width: 100%;
+  margin-top: 0.5rem;
+  box-shadow: 0 4px 12px rgba(40, 167, 69, 0.25);
+}
+
+.btn-success:hover {
+  background-color: #218838;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(40, 167, 69, 0.35);
+}
+
+.btn-success:active {
+  transform: translateY(0);
+}
+
+/* Animation de chargement (si vous ajoutez un indicateur) */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.loading-spinner {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 1s ease-in-out infinite;
+  margin-right: 0.5rem;
+}
+
+/* Responsive */
+@media (max-width: 576px) {
+  .card-body {
+    padding: 1.5rem;
+  }
+  
+  .btn-success {
+    padding: 0.65rem 1rem;
+  }
+}

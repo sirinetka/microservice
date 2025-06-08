@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reglement List</title>
+    <style>
+        /* Style général */
+        body {
+            font-family: 'Segoe UI', Roboto, sans-serif;
+            background-color: #f5f7fa;
+        }
+        
+        .container {
+            max-width: 1200px;
+        }
+        
+        /* Style de la carte */
+        .card {
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+        
+        .card-title {
+            padding: 18px;
+            background: linear-gradient(135deg, #00008f 0%, #1a1aa6 100%);
+            color: white;
+            margin: 0;
+        }
+        
+        .card-title h3 {
+            margin: 0;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+        
+        /* Style du tableau */
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            background: white;
+        }
+        
+        thead {
+            position: sticky;
+            top: 0;
+        }
+        
+        th {
+            background-color: #f8f9fc;
+            color: #4a4a4a;
+            padding: 16px 20px;
+            text-align: left;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 0.5px;
+            border-bottom: 2px solid #e0e3ed;
+        }
+        
+        td {
+            padding: 14px 20px;
+            border-bottom: 1px solid #eef0f7;
+            color: #555;
+            font-weight: 400;
+        }
+        
+        tr:hover td {
+            background-color: #f8fafd;
+            color: #00008f;
+        }
+        
+        tr:last-child td {
+            border-bottom: none;
+        }
+        
+        /* Effets spéciaux */
+        tr {
+            transition: all 0.2s ease;
+        }
+        
+        tr:hover {
+            transform: translateX(2px);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .card {
+                border-radius: 8px;
+            }
+            
+            th, td {
+                padding: 12px 10px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="p-3 container mt-5">
+  <div class="card">
+    <div class="card-title text-center rounded-bottom-5">
+      <h3 class="p-lg-1 fw-bolder fs-4 text-light">Reglement List</h3>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Montant</th>
+          <th>Date</th>
+          <th>Mode</th>
+          <th>Facture</th>
+          <th>Référence</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let reg of reglements">
+          <td>{{ reg.id }}</td>
+          <td>{{ reg.montant }}</td>
+          <td>{{ reg.dateReglement }}</td>
+          <td>{{ reg.mode }}</td>
+          <td>{{ reg.factureId }}</td>
+          <td>{{ reg.referenceTransaction }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,186 @@
+/* Style général */
+:root {
+  --bleu-fonce: #2563eb;
+  --bleu-clair: #3b82f6;
+  --bleu-hover: #1d4ed8;
+  --fond-clair: #f8fafc;
+  --texte-fonce: #1e293b;
+  --texte-clair: #ffffff;
+  --bordure: #e2e8f0;
+  --success: #10b981;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  background-color: #f1f5f9;
+  color: var(--texte-fonce);
+  line-height: 1.5;
+}
+
+/* Titre stylé */
+h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin: 2rem 0;
+  color: var(--bleu-fonce);
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+h2::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(to right, var(--bleu-fonce), var(--bleu-clair));
+  border-radius: 2px;
+}
+
+/* Tableau moderne */
+table {
+  width: 100%;
+  max-width: 1200px;
+  margin: 2rem auto;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+/* En-tête du tableau */
+th {
+  background: linear-gradient(to right, var(--bleu-fonce), var(--bleu-clair));
+  color: var(--texte-clair);
+  padding: 1rem 1.5rem;
+  text-align: left;
+  font-weight: 600;
+  position: relative;
+}
+
+th:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 25%;
+  height: 50%;
+  width: 1px;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Cellules du tableau */
+td {
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--bordure);
+  vertical-align: middle;
+  transition: background-color 0.2s ease;
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+tr:hover td {
+  background-color: #f8fafc;
+}
+
+/* Input stylé */
+input[type="number"] {
+  width: 100%;
+  max-width: 120px;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--bordure);
+  border-radius: 8px;
+  font-family: inherit;
+  transition: all 0.2s ease;
+  background-color: var(--fond-clair);
+}
+
+input[type="number"]:focus {
+  outline: none;
+  border-color: var(--bleu-clair);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+  background-color: white;
+}
+
+/* Bouton super stylé avec icône */
+button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: linear-gradient(to right, var(--bleu-fonce), var(--bleu-clair));
+  color: white;
+  border: none;
+  padding: 0.6rem 1.25rem;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+  background: linear-gradient(to right, var(--bleu-hover), var(--bleu-fonce));
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+/* Icône dans le bouton */
+button::before {
+  content: "↻";
+  display: inline-block;
+  font-size: 1rem;
+  transition: transform 0.3s ease;
+}
+
+button:hover::before {
+  transform: rotate(45deg);
+}
+
+/* Animation des lignes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+tr {
+  animation: fadeIn 0.4s ease-out forwards;
+  opacity: 0;
+}
+
+/* Délai d'animation progressif */
+tr:nth-child(1) { animation-delay: 0.05s; }
+tr:nth-child(2) { animation-delay: 0.1s; }
+tr:nth-child(3) { animation-delay: 0.15s; }
+tr:nth-child(4) { animation-delay: 0.2s; }
+
+/* Responsive */
+@media (max-width: 768px) {
+  table {
+    font-size: 0.9rem;
+  }
+  
+  th, td {
+    padding: 0.75rem 1rem;
+  }
+  
+  button {
+    padding: 0.5rem 1rem;
+  }
+}
